@@ -1,0 +1,12 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  labels:
+    app: web
+  name: web
+spec:
+  lookupPolicy:
+    local: false
+status:
+  dockerImageRepository: image-registry.openshift-image-registry.svc:5000/test/web
+  publicDockerImageRepository: default-route-openshift-image-registry.apps.ocp4.example.com/test/web

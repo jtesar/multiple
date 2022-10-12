@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    openshift.io/generated-by: OpenShiftNewApp
+  creationTimestamp: "2022-10-12T12:12:08Z"
+  labels:
+    app: web
+    app.kubernetes.io/component: web
+    app.kubernetes.io/instance: web
+  name: "{{ .Release.Name }}"
+  namespace: test
+  resourceVersion: "664548"
+  uid: 7585682f-f64d-42f6-8bee-48f6ea96d687
+spec:
+  clusterIP: 172.30.19.253
+  clusterIPs:
+  - 172.30.19.253
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: 8080-tcp
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    deployment: web
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

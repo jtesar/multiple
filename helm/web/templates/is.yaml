@@ -1,0 +1,28 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  annotations:
+    openshift.io/generated-by: OpenShiftNewApp
+  creationTimestamp: "2022-10-12T12:12:08Z"
+  generation: 1
+  labels:
+    app: web
+    app.kubernetes.io/component: web
+    app.kubernetes.io/instance: web
+  name: "{{ .Release.Name }}"
+  namespace: test
+  resourceVersion: "664674"
+  uid: d3e8f15e-2c1a-4c3b-a3a3-f66e25d01ab2
+spec:
+  lookupPolicy:
+    local: false
+status:
+  dockerImageRepository: image-registry.openshift-image-registry.svc:5000/test/web
+  publicDockerImageRepository: default-route-openshift-image-registry.apps.ocp4.example.com/test/web
+  tags:
+  - items:
+    - created: "2022-10-12T12:12:28Z"
+      dockerImageReference: image-registry.openshift-image-registry.svc:5000/test/web@sha256:983ff792ee82b7abcb38a41da3ac7a6198ee3844ba94b0329325a49448c5f941
+      generation: 1
+      image: sha256:983ff792ee82b7abcb38a41da3ac7a6198ee3844ba94b0329325a49448c5f941
+    tag: latest
